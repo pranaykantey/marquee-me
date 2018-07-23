@@ -1,0 +1,122 @@
+/*general*/
+a {
+    text-decoration: none;
+}a:hover {
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6{
+    margin-top: 0;
+    padding-top: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+.main-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/*row*/
+.col-row{
+    overflow: hidden;
+    display: block;
+    clear: both;
+}
+/*column*/
+.marquee {
+    overflow: hidden;
+    margin: auto;
+    transition: 1ms;
+}
+.marquee-container{
+    transition: 1ms;
+}
+.item {
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-family: tahoma;
+}
+.column-1,.column-2,.column-3,.column-4,.column-5,.column-6,.column-7,.column-8,.column-9,.column-10,.column-11,.column-12 {
+    float: left;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.column-1 {
+    width: 8.33%;
+}
+.column-2 {
+    width: 16.67%;
+}
+.column-3 {
+    width: 25%;
+}
+.column-4 {
+    width: 33.33%;
+}
+.column-5 {
+    width: 41.67%;
+}
+.column-6 {
+    width: 50%;
+}
+.column-7 {
+    width: 58.33%;
+}
+.column-8 {
+    width: 66.67%;
+}
+.column-9 {
+    width: 75%;
+}
+.column-10 {
+    width: 83.33%;
+}
+.column-11 {
+    width: 91.67%;
+}
+.column-12 {
+    width: 100%;
+}
+/*padding*/
+.pad-1{
+    padding: 2px;
+}
+.pad-2{
+    padding: 4px;
+}
+.pad-3{
+    padding: 6px;
+}
+.pad-4{
+    padding: 8px;
+}
+.pad-5{
+    padding: 10px;
+}
+/*padding*/
+.mar-1{
+    margin: 2px;
+}
+.mar-2{
+    margin: 4px;
+}
+.mar-3{
+    margin: 6px;
+}
+.mar-4{
+    margin: 8px;
+}
+.mar-5{
+    margin: 10px;
+}
+/*border*/
+/*.border {
+    border: 1px solid #f1f1f1;
+    border-radius: 3px;
+}*/
