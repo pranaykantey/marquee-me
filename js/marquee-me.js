@@ -1,6 +1,6 @@
 (function($){
 	$.fn.marqueMe = function( options ){
-		let marquee,marqueeWidth,container,item,itemWidth,items,itemBg,speedAttr;
+		let marquee,marqueeWidth,container,item,itemWidth,items,itemBg,speedAttr,marqueeInterval,distanceLeft,transformVal;
 		speedAttr = $(this).attr('data-speed');
 		// default settings
         var opts = $.extend({
@@ -37,9 +37,23 @@
 	        	container.children('.item:nth-child('+i+')').find('h3').css('color',itemBg[colorChildNumber]);
 	        	i++;
 	        }
-	        // runing marquee function
+	        // marquee stop on hover functionality
+	        item.on('mouseover',function(){
+	        	clearInterval(marqueeInterval);
+	        	distanceLeft = $(this).offset().left;
+
+	        	if( distanceLeft < 0 ){
+	        		$(this).parent('.marquee-container').css('padding-left',distanceLeft+'px');
+	        	}
+	        });
+	        item.on('mouseleave',function(){
+	        	marqueeInterval = setInterval(runMqrqueeWheel,10);
+	        });
+
+	        // runing marquee function ( Interval )
 	        var count = 0;
-	        setInterval(function(){
+	        marqueeInterval = setInterval(runMqrqueeWheel,10);
+	        function runMqrqueeWheel(){
 
 		        if( opts.speed == 'slow' ){
 					runSpeed = 1;
@@ -55,15 +69,17 @@
 	        		container.css('visibility','visible');
 	        		container.css('margin-left',marqueeWidth+'px');
 	        		container.css('transform','translateX(-'+count+'px)');
+	        		transformVal = container.attr('data-transformval',count);
 	        		count = count+Number(runSpeed);
 	        	}else{
 	        		count=0;
 
 	        		container.css('transform','translateX('+count+'px)');
 	        		container.css('visibility','hidden');
+	        		transformVal = container.attr('data-transformval',count);
 	        		count = count+Number(runSpeed);
 	        	}
-	        },10);
+	        }
 	        // katsat
 			console.log( itemBg.length );
 			// katsat end
